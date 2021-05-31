@@ -1,0 +1,27 @@
+dummy <- read.csv("C:/fca/R_project.csv", stringsAsFactors=T)
+install.packages("dplyr")
+install.packages("lubridate")
+library("dplyr")
+library("lubridate")
+install.packages("gmodels")
+library(gmodels)
+CrossTable(x = dummy$channel, y = dummy$homeShape, chisq = TRUE)
+channel_anova <- aov(homeShape~channel, data=dummy)
+summary(channel_anova)
+LDuncan((aov(homeShape~channel, data = dummy)), "channel")
+install.packages("laercio")
+library(laercio)
+head(dummy2)
+
+
+dummy2 <- read.csv("C:/fca/R_project_2.csv")
+CrossTable(x=dummy2$visit_time, y=dummy2$other,chisq = TRUE)
+
+dummy3 <- read.csv("C:/fca/R_project_3.csv")
+CrossTable(x=dummy3$visit_time, y=dummy3$dark,chisq = TRUE)
+
+head(dummy4)
+summary(dummy4)
+dummy4 <- read.csv("C:/fca/R_project_4.csv")
+CrossTable(x=dummy4$visit_time, y=dummy4$other,chisq = TRUE)
+write.csv(dummy2, "dummy2.csv")
